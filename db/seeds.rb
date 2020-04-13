@@ -14,15 +14,23 @@ Topping.destroy_all
 GourmetTopping.destroy_all
 Pizza.destroy_all
 
-steven = User.create(name: 'Steven')
-order = Order.create(user_id: steven.id)
-cheese = Cheese.create(name: 'mozarella', image: 'url')
-sauce = Sauce.create(name: 'red', image: "url")
-topping = Topping.create(name: 'pepperoni', image: "url")
-gourmetTopping = GourmetTopping.create(name: 'olives', image: "url")
-pizza = Pizza.create(order_id: order.id, cheese_id: cheese.id, sauce_id: sauce.id, size: 'Large')
-pizza.toppings << topping
-pizza.gourmet_toppings << gourmetTopping
+sauces = ['tomato', 'white', 'bbq', 'garlic olive oil']
+sauces.map {|sauce| Sauce.create(name: sauce)}
+
+cheeses = ['feta, parmesan, mozzarella, ricota']
+cheeses.map {|cheese| Cheese.create(name: cheese)}
+
+veggies = ['artichoke hearts', 'avocado', 'broccoli', 'capers', 'green peppers', 'mushrooms', 'onions', 'olives', 'roasted garlic', 'spinach', 'sun dried tomatoes', 'zucchini']
+meats = ['bacon, bbq chicken, ham, meatballs, pepperoni, proscuitto, salami, sausage']
+toppings = veggies + meats
+toppings.map {|topping| Topping.create(name: topping)}
+
+spices = ['basil, jalapeno peppers, oregano']
+seafood = ['anchovies, shrimps, squid']
+gourmetToppings = spices + seafood
+gourmetToppings.map {|gourmetTopping| GourmetTopping.create(name: gourmetTopping)}
+
+
 
 
 
