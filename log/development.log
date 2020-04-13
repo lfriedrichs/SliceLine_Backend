@@ -1508,3 +1508,80 @@ Migrating to CreatePizzaGourmetToppings (20200413180437)
   [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(6964523578905205950)[0m
   [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 20]]
+  [1m[35m (18.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 21]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mOrder Load (4.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  [1m[36mCheese Load (4.2ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses"[0m
+  [1m[36mSauce Load (4.0ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mTopping Load (4.3ms)[0m  [1m[34mSELECT "toppings".* FROM "toppings"[0m
+  [1m[36mGourmetTopping Load (4.0ms)[0m  [1m[34mSELECT "gourmet_toppings".* FROM "gourmet_toppings"[0m
+  [1m[36mPizza Load (3.8ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Create (6.4ms)[0m  [1m[32mINSERT INTO "sauces" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "tomato"], ["created_at", "2020-04-13 23:16:44.774186"], ["updated_at", "2020-04-13 23:16:44.774186"]]
+  [1m[35m (11.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Create (0.5ms)[0m  [1m[32mINSERT INTO "sauces" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "white"], ["created_at", "2020-04-13 23:16:44.802568"], ["updated_at", "2020-04-13 23:16:44.802568"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Create (0.6ms)[0m  [1m[32mINSERT INTO "sauces" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "bbq"], ["created_at", "2020-04-13 23:16:44.812598"], ["updated_at", "2020-04-13 23:16:44.812598"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Create (0.5ms)[0m  [1m[32mINSERT INTO "sauces" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "garlic olive oil"], ["created_at", "2020-04-13 23:16:44.823471"], ["updated_at", "2020-04-13 23:16:44.823471"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCheese Create (2.9ms)[0m  [1m[32mINSERT INTO "cheeses" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "feta, parmesan, mozzarella, ricota"], ["created_at", "2020-04-13 23:16:44.839309"], ["updated_at", "2020-04-13 23:16:44.839309"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopping Create (0.6ms)[0m  [1m[32mINSERT INTO "toppings" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "artichoke hearts"], ["created_at", "2020-04-13 23:16:44.854768"], ["updated_at", "2020-04-13 23:16:44.854768"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopping Create (0.3ms)[0m  [1m[32mINSERT INTO "toppings" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "avocado"], ["created_at", "2020-04-13 23:16:44.861457"], ["updated_at", "2020-04-13 23:16:44.861457"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopping Create (0.3ms)[0m  [1m[32mINSERT INTO "toppings" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "broccoli"], ["created_at", "2020-04-13 23:16:44.868342"], ["updated_at", "2020-04-13 23:16:44.868342"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopping Create (0.4ms)[0m  [1m[32mINSERT INTO "toppings" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "capers"], ["created_at", "2020-04-13 23:16:44.875702"], ["updated_at", "2020-04-13 23:16:44.875702"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopping Create (0.3ms)[0m  [1m[32mINSERT INTO "toppings" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "green peppers"], ["created_at", "2020-04-13 23:16:44.882136"], ["updated_at", "2020-04-13 23:16:44.882136"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopping Create (0.3ms)[0m  [1m[32mINSERT INTO "toppings" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "mushrooms"], ["created_at", "2020-04-13 23:16:44.888538"], ["updated_at", "2020-04-13 23:16:44.888538"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopping Create (0.3ms)[0m  [1m[32mINSERT INTO "toppings" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "onions"], ["created_at", "2020-04-13 23:16:44.895676"], ["updated_at", "2020-04-13 23:16:44.895676"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopping Create (0.4ms)[0m  [1m[32mINSERT INTO "toppings" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "olives"], ["created_at", "2020-04-13 23:16:44.901811"], ["updated_at", "2020-04-13 23:16:44.901811"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopping Create (0.3ms)[0m  [1m[32mINSERT INTO "toppings" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "roasted garlic"], ["created_at", "2020-04-13 23:16:44.908299"], ["updated_at", "2020-04-13 23:16:44.908299"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopping Create (0.3ms)[0m  [1m[32mINSERT INTO "toppings" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "spinach"], ["created_at", "2020-04-13 23:16:44.915347"], ["updated_at", "2020-04-13 23:16:44.915347"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopping Create (0.3ms)[0m  [1m[32mINSERT INTO "toppings" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "sun dried tomatoes"], ["created_at", "2020-04-13 23:16:44.922880"], ["updated_at", "2020-04-13 23:16:44.922880"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopping Create (0.5ms)[0m  [1m[32mINSERT INTO "toppings" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "zucchini"], ["created_at", "2020-04-13 23:16:44.929221"], ["updated_at", "2020-04-13 23:16:44.929221"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopping Create (0.3ms)[0m  [1m[32mINSERT INTO "toppings" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "bacon, bbq chicken, ham, meatballs, pepperoni, proscuitto, salami, sausage"], ["created_at", "2020-04-13 23:16:44.936622"], ["updated_at", "2020-04-13 23:16:44.936622"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGourmetTopping Create (0.6ms)[0m  [1m[32mINSERT INTO "gourmet_toppings" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "basil, jalapeno peppers, oregano"], ["created_at", "2020-04-13 23:16:44.947727"], ["updated_at", "2020-04-13 23:16:44.947727"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGourmetTopping Create (0.3ms)[0m  [1m[32mINSERT INTO "gourmet_toppings" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "anchovies, shrimps, squid"], ["created_at", "2020-04-13 23:16:44.955723"], ["updated_at", "2020-04-13 23:16:44.955723"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSauce Load (0.5ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCheese Load (0.7ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mTopping Load (0.6ms)[0m  [1m[34mSELECT "toppings".* FROM "toppings" LIMIT $1[0m  [["LIMIT", 11]]
