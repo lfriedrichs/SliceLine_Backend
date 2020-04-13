@@ -10,21 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_182540) do
+ActiveRecord::Schema.define(version: 2020_04_13_180437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cheeses", force: :cascade do |t|
     t.string "name"
-    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "gourmet_toppings", force: :cascade do |t|
     t.string "name"
-    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -52,22 +50,20 @@ ActiveRecord::Schema.define(version: 2020_04_13_182540) do
   create_table "pizzas", force: :cascade do |t|
     t.integer "sauce_id"
     t.integer "cheese_id"
+    t.integer "order_id"
+    t.string "size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "size"
-    t.integer "order_id"
   end
 
   create_table "sauces", force: :cascade do |t|
     t.string "name"
-    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "toppings", force: :cascade do |t|
     t.string "name"
-    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
