@@ -1,0 +1,2 @@
+class GourmetTopping < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class PizzaGourmetTopping < ApplicationRecord
+end
