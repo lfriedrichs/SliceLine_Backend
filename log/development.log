@@ -828,3 +828,683 @@ Migrating to AddOrderIdToPizza (20200413182540)
   [1m[36mPizza Load (0.9ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" LIMIT $1[0m  [["LIMIT", 11]]
   [1m[36mPizza Load (0.3ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" ORDER BY "pizzas"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mTopping Load (0.8ms)[0m  [1m[34mSELECT "toppings".* FROM "toppings" INNER JOIN "pizza_toppings" ON "toppings"."id" = "pizza_toppings"."topping_id" WHERE "pizza_toppings"."pizza_id" = $1 LIMIT $2[0m  [["pizza_id", 6], ["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-04-13 14:04:24 -0700
+  [1m[35m (12.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/lieffriedrichs/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/lieffriedrichs/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 90.8ms | Allocations: 480)
+Completed 200 OK in 271ms (Views: 173.8ms | ActiveRecord: 0.0ms | Allocations: 2634)
+
+
+Started GET "/api/v1" for ::1 at 2020-04-13 14:04:31 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/pizza" for ::1 at 2020-04-13 14:04:37 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/pizza"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/pizzas" for ::1 at 2020-04-13 14:04:40 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/pizzas"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/users" for ::1 at 2020-04-13 14:04:46 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/users" for ::1 at 2020-04-13 14:05:47 -0700
+  
+SyntaxError (/Users/lieffriedrichs/Development/code/SliceLine_Backend/app/controllers/api/v1/users_controller.rb:7: syntax error, unexpected ',', expecting end
+        end, view: :normal
+           ^):
+  
+app/controllers/api/v1/users_controller.rb:7: syntax error, unexpected ',', expecting end
+app/controllers/api/v1/users_controller.rb:7: syntax error, unexpected ',', expecting end
+Started GET "/favicon.ico" for ::1 at 2020-04-13 14:05:47 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/users" for ::1 at 2020-04-13 14:06:20 -0700
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for Api::V1::UsersController):
+  
+actionpack (6.0.2.2) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/users/1" for ::1 at 2020-04-13 14:06:44 -0700
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 400 Bad Request in 45ms (ActiveRecord: 0.0ms | Allocations: 1257)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/api/v1/users_controller.rb:14:in `user_params'
+app/controllers/api/v1/users_controller.rb:4:in `show'
+Started GET "/api/v1/users/1" for ::1 at 2020-04-13 14:19:13 -0700
+  [1m[35m (17.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 400 Bad Request in 132ms (ActiveRecord: 0.0ms | Allocations: 1226)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/api/v1/users_controller.rb:14:in `user_params'
+app/controllers/api/v1/users_controller.rb:4:in `show'
+Started GET "/api/v1/users/1" for ::1 at 2020-04-13 14:20:31 -0700
+  
+SyntaxError (/Users/lieffriedrichs/Development/code/SliceLine_Backend/app/controllers/api/v1/users_controller.rb:4: syntax error, unexpected ']', expecting ')'
+... = User.find_by_id(user_params])
+...                              ^):
+  
+app/controllers/api/v1/users_controller.rb:4: syntax error, unexpected ']', expecting ')'
+app/controllers/api/v1/users_controller.rb:4: syntax error, unexpected ']', expecting ')'
+Started GET "/api/v1/users/1" for ::1 at 2020-04-13 14:20:59 -0700
+  
+SyntaxError (/Users/lieffriedrichs/Development/code/SliceLine_Backend/app/controllers/api/v1/users_controller.rb:4: syntax error, unexpected ']', expecting ')'
+... = User.find_by_id(params[:id]])
+...                              ^):
+  
+app/controllers/api/v1/users_controller.rb:4: syntax error, unexpected ']', expecting ')'
+app/controllers/api/v1/users_controller.rb:4: syntax error, unexpected ']', expecting ')'
+Started GET "/api/v1/users/1" for ::1 at 2020-04-13 14:21:24 -0700
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 205ms (ActiveRecord: 42.3ms | Allocations: 2833)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/api/v1/users_controller.rb:5:in `show'
+Started GET "/api/v1/users/1" for ::1 at 2020-04-13 14:21:39 -0700
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (12.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `show'
+Completed 400 Bad Request in 110ms (ActiveRecord: 40.0ms | Allocations: 1856)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/api/v1/users_controller.rb:14:in `user_params'
+app/controllers/api/v1/users_controller.rb:6:in `show'
+Started GET "/api/v1/users/1" for ::1 at 2020-04-13 14:21:51 -0700
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `show'
+  [1m[35m (7.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `show'
+  [1m[36mUser Create (64.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "test"], ["created_at", "2020-04-13 21:21:51.704380"], ["updated_at", "2020-04-13 21:21:51.704380"]]
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `show'
+  [1m[35m (46.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.04ms)
+Completed 200 OK in 612ms (Views: 281.0ms | ActiveRecord: 163.1ms | Allocations: 9230)
+
+
+Started GET "/api/v1/users/20" for ::1 at 2020-04-13 14:21:57 -0700
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (66.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (11.48ms)
+Completed 200 OK in 91ms (Views: 12.8ms | ActiveRecord: 66.1ms | Allocations: 792)
+
+
+Started GET "/api/v1/orders/20" for ::1 at 2020-04-13 14:22:21 -0700
+  
+SyntaxError (/Users/lieffriedrichs/Development/code/SliceLine_Backend/app/controllers/api/v1/orders_controller.rb:28: syntax error, unexpected ':', expecting end
+            view: :normal
+                ^):
+  
+app/controllers/api/v1/orders_controller.rb:28: syntax error, unexpected ':', expecting end
+app/controllers/api/v1/orders_controller.rb:28: syntax error, unexpected ':', expecting end
+Started GET "/api/v1/orders/1" for ::1 at 2020-04-13 14:22:25 -0700
+  
+SyntaxError (/Users/lieffriedrichs/Development/code/SliceLine_Backend/app/controllers/api/v1/orders_controller.rb:28: syntax error, unexpected ':', expecting end
+            view: :normal
+                ^):
+  
+app/controllers/api/v1/orders_controller.rb:28: syntax error, unexpected ':', expecting end
+app/controllers/api/v1/orders_controller.rb:28: syntax error, unexpected ':', expecting end
+Started GET "/api/v1/users/20" for ::1 at 2020-04-13 14:22:55 -0700
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.62ms)
+Completed 200 OK in 290ms (Views: 11.2ms | ActiveRecord: 68.8ms | Allocations: 4490)
+
+
+Started GET "/api/v1/orders/20" for ::1 at 2020-04-13 14:23:03 -0700
+Processing by Api::V1::OrdersController#show as HTML
+  Parameters: {"id"=>"20"}
+Completed 404 Not Found in 176ms (ActiveRecord: 139.4ms | Allocations: 1669)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Order without an ID):
+  
+app/controllers/api/v1/orders_controller.rb:9:in `show'
+Started GET "/api/v1/orders/20" for ::1 at 2020-04-13 14:23:25 -0700
+Processing by Api::V1::OrdersController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mOrder Load (3.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/orders_controller.rb:9:in `show'
+[active_model_serializers] Rendered OrderSerializer with ActiveModelSerializers::Adapter::Attributes (0.81ms)
+Completed 200 OK in 133ms (Views: 10.2ms | ActiveRecord: 36.6ms | Allocations: 4714)
+
+
+Started GET "/api/v1/orders/20" for ::1 at 2020-04-13 14:26:51 -0700
+Processing by Api::V1::OrdersController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/orders_controller.rb:9:in `show'
+[active_model_serializers] Rendered OrderSerializer with ActiveModelSerializers::Adapter::Attributes (3.15ms)
+Completed 200 OK in 317ms (Views: 37.0ms | ActiveRecord: 12.6ms | Allocations: 4582)
+
+
+Started GET "/api/v1/users/20" for ::1 at 2020-04-13 14:27:12 -0700
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 118ms (ActiveRecord: 90.9ms | Allocations: 4058)
+
+
+  
+SyntaxError (/Users/lieffriedrichs/Development/code/SliceLine_Backend/app/serializers/user_serializer.rb:7: syntax error, unexpected '}', expecting =>
+    end}
+       ^):
+  
+app/serializers/user_serializer.rb:7: syntax error, unexpected '}', expecting =>
+app/serializers/user_serializer.rb:7: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/users_controller.rb:8:in `show'
+Started GET "/api/v1/users/20" for ::1 at 2020-04-13 14:27:45 -0700
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 53.3ms | Allocations: 4270)
+
+
+  
+SyntaxError (/Users/lieffriedrichs/Development/code/SliceLine_Backend/app/serializers/user_serializer.rb:7: syntax error, unexpected '}', expecting =>
+    end }
+        ^):
+  
+app/serializers/user_serializer.rb:7: syntax error, unexpected '}', expecting =>
+app/serializers/user_serializer.rb:7: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/users_controller.rb:8:in `show'
+Started GET "/api/v1/users/20" for ::1 at 2020-04-13 14:27:58 -0700
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 20]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (173.46ms)
+Completed 200 OK in 343ms (Views: 186.9ms | ActiveRecord: 31.5ms | Allocations: 10588)
+
+
+Started GET "/api/v1/orders/20" for ::1 at 2020-04-13 14:30:47 -0700
+Processing by Api::V1::OrdersController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/orders_controller.rb:9:in `show'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:11:in `user'
+[active_model_serializers]   [1m[36mPizza Load (3.6ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" WHERE "pizzas"."order_id" = $1[0m  [["order_id", 20]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:5:in `map'
+[active_model_serializers] Rendered OrderSerializer with ActiveModelSerializers::Adapter::Attributes (254.43ms)
+Completed 200 OK in 366ms (Views: 236.3ms | ActiveRecord: 64.0ms | Allocations: 16974)
+
+
+Started GET "/api/v1/orders/20" for ::1 at 2020-04-13 14:33:17 -0700
+Processing by Api::V1::OrdersController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mOrder Load (1.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/orders_controller.rb:9:in `show'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:16:in `user'
+[active_model_serializers]   [1m[36mPizza Load (1.9ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" WHERE "pizzas"."order_id" = $1[0m  [["order_id", 20]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mSauce Load (21.5ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:8:in `block in pizzas'
+[active_model_serializers]   [1m[36mCheese Load (5.2ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses" WHERE "cheeses"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:9:in `block in pizzas'
+[active_model_serializers]   [1m[36mTopping Load (20.4ms)[0m  [1m[34mSELECT "toppings".* FROM "toppings" INNER JOIN "pizza_toppings" ON "toppings"."id" = "pizza_toppings"."topping_id" WHERE "pizza_toppings"."pizza_id" = $1[0m  [["pizza_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/orders_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mGourmetTopping Load (8.0ms)[0m  [1m[34mSELECT "gourmet_toppings".* FROM "gourmet_toppings" INNER JOIN "pizza_gourmet_toppings" ON "gourmet_toppings"."id" = "pizza_gourmet_toppings"."gourmet_topping_id" WHERE "pizza_gourmet_toppings"."pizza_id" = $1[0m  [["pizza_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/orders_controller.rb:10:in `show'
+[active_model_serializers] Rendered OrderSerializer with ActiveModelSerializers::Adapter::Attributes (560.13ms)
+Completed 200 OK in 731ms (Views: 443.9ms | ActiveRecord: 178.5ms | Allocations: 41027)
+
+
+Started GET "/api/v1/orders/20" for ::1 at 2020-04-13 14:34:49 -0700
+Processing by Api::V1::OrdersController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/orders_controller.rb:9:in `show'
+[active_model_serializers]   [1m[36mUser Load (10.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:16:in `user'
+[active_model_serializers]   [1m[36mPizza Load (1.2ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" WHERE "pizzas"."order_id" = $1[0m  [["order_id", 20]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mSauce Load (0.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:8:in `block in pizzas'
+[active_model_serializers]   [1m[36mCheese Load (1.1ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses" WHERE "cheeses"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:9:in `block in pizzas'
+[active_model_serializers]   [1m[36mTopping Load (0.5ms)[0m  [1m[34mSELECT "toppings".* FROM "toppings" INNER JOIN "pizza_toppings" ON "toppings"."id" = "pizza_toppings"."topping_id" WHERE "pizza_toppings"."pizza_id" = $1[0m  [["pizza_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/orders_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mGourmetTopping Load (0.6ms)[0m  [1m[34mSELECT "gourmet_toppings".* FROM "gourmet_toppings" INNER JOIN "pizza_gourmet_toppings" ON "gourmet_toppings"."id" = "pizza_gourmet_toppings"."gourmet_topping_id" WHERE "pizza_gourmet_toppings"."pizza_id" = $1[0m  [["pizza_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/orders_controller.rb:10:in `show'
+[active_model_serializers] Rendered OrderSerializer with ActiveModelSerializers::Adapter::Attributes (640.1ms)
+Completed 200 OK in 856ms (Views: 447.9ms | ActiveRecord: 255.9ms | Allocations: 39809)
+
+
+Started GET "/api/v1/orders/20" for ::1 at 2020-04-13 14:36:04 -0700
+Processing by Api::V1::OrdersController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mOrder Load (1.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/orders_controller.rb:9:in `show'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:16:in `user'
+[active_model_serializers]   [1m[36mPizza Load (0.6ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" WHERE "pizzas"."order_id" = $1[0m  [["order_id", 20]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mSauce Load (0.3ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:8:in `block in pizzas'
+[active_model_serializers]   [1m[36mCheese Load (0.4ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses" WHERE "cheeses"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:9:in `block in pizzas'
+[active_model_serializers]   [1m[36mTopping Load (0.6ms)[0m  [1m[34mSELECT "toppings".* FROM "toppings" INNER JOIN "pizza_toppings" ON "toppings"."id" = "pizza_toppings"."topping_id" WHERE "pizza_toppings"."pizza_id" = $1[0m  [["pizza_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/orders_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mGourmetTopping Load (0.4ms)[0m  [1m[34mSELECT "gourmet_toppings".* FROM "gourmet_toppings" INNER JOIN "pizza_gourmet_toppings" ON "gourmet_toppings"."id" = "pizza_gourmet_toppings"."gourmet_topping_id" WHERE "pizza_gourmet_toppings"."pizza_id" = $1[0m  [["pizza_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/orders_controller.rb:10:in `show'
+[active_model_serializers] Rendered OrderSerializer with ActiveModelSerializers::Adapter::Attributes (710.37ms)
+Completed 200 OK in 832ms (Views: 561.0ms | ActiveRecord: 170.7ms | Allocations: 39774)
+
+
+Started GET "/api/v1/orders/20" for ::1 at 2020-04-13 14:49:20 -0700
+Processing by Api::V1::OrdersController#show as HTML
+  Parameters: {"id"=>"20"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 201)
+
+
+  
+SyntaxError (/Users/lieffriedrichs/Development/code/SliceLine_Backend/app/models/order.rb:5: syntax error, unexpected tSYMBEG, expecting ')'
+    def makePizza(:pizzas)
+                  ^
+/Users/lieffriedrichs/Development/code/SliceLine_Backend/app/models/order.rb:16: syntax error, unexpected end, expecting end-of-input):
+  
+app/models/order.rb:5: syntax error, unexpected tSYMBEG, expecting ')'
+app/models/order.rb:16: syntax error, unexpected end, expecting end-of-input
+app/models/order.rb:5: syntax error, unexpected tSYMBEG, expecting ')'
+app/models/order.rb:16: syntax error, unexpected end, expecting end-of-input
+app/controllers/api/v1/orders_controller.rb:9:in `show'
+Started GET "/api/v1/orders/20" for ::1 at 2020-04-13 14:50:11 -0700
+Processing by Api::V1::OrdersController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/orders_controller.rb:9:in `show'
+[active_model_serializers]   [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:16:in `user'
+[active_model_serializers]   [1m[36mPizza Load (0.5ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" WHERE "pizzas"."order_id" = $1[0m  [["order_id", 20]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mSauce Load (0.5ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:8:in `block in pizzas'
+[active_model_serializers]   [1m[36mCheese Load (0.5ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses" WHERE "cheeses"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:9:in `block in pizzas'
+[active_model_serializers]   [1m[36mTopping Load (1.4ms)[0m  [1m[34mSELECT "toppings".* FROM "toppings" INNER JOIN "pizza_toppings" ON "toppings"."id" = "pizza_toppings"."topping_id" WHERE "pizza_toppings"."pizza_id" = $1[0m  [["pizza_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/orders_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mGourmetTopping Load (0.7ms)[0m  [1m[34mSELECT "gourmet_toppings".* FROM "gourmet_toppings" INNER JOIN "pizza_gourmet_toppings" ON "gourmet_toppings"."id" = "pizza_gourmet_toppings"."gourmet_topping_id" WHERE "pizza_gourmet_toppings"."pizza_id" = $1[0m  [["pizza_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/orders_controller.rb:10:in `show'
+[active_model_serializers] Rendered OrderSerializer with ActiveModelSerializers::Adapter::Attributes (702.92ms)
+Completed 200 OK in 866ms (Views: 469.7ms | ActiveRecord: 284.2ms | Allocations: 40026)
+
+
+Started GET "/api/v1/orders/20" for ::1 at 2020-04-13 14:52:05 -0700
+Processing by Api::V1::OrdersController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/orders_controller.rb:9:in `show'
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:16:in `user'
+[active_model_serializers]   [1m[36mPizza Load (0.3ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" WHERE "pizzas"."order_id" = $1[0m  [["order_id", 20]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mSauce Load (2.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:8:in `block in pizzas'
+[active_model_serializers]   [1m[36mCheese Load (0.3ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses" WHERE "cheeses"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:9:in `block in pizzas'
+[active_model_serializers]   [1m[36mTopping Load (0.4ms)[0m  [1m[34mSELECT "toppings".* FROM "toppings" INNER JOIN "pizza_toppings" ON "toppings"."id" = "pizza_toppings"."topping_id" WHERE "pizza_toppings"."pizza_id" = $1[0m  [["pizza_id", 6]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mGourmetTopping Load (1.0ms)[0m  [1m[34mSELECT "gourmet_toppings".* FROM "gourmet_toppings" INNER JOIN "pizza_gourmet_toppings" ON "gourmet_toppings"."id" = "pizza_gourmet_toppings"."gourmet_topping_id" WHERE "pizza_gourmet_toppings"."pizza_id" = $1[0m  [["pizza_id", 6]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:11:in `map'
+[active_model_serializers] Rendered OrderSerializer with ActiveModelSerializers::Adapter::Attributes (309.27ms)
+Completed 200 OK in 391ms (Views: 272.2ms | ActiveRecord: 66.5ms | Allocations: 38653)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6964523578905205950)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddOrderIdToPizza (20200413182540)
+  [1m[35m (14.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.7ms)[0m  [1m[35mALTER TABLE "pizzas" DROP COLUMN "order_id"[0m
+  [1m[36mprimary::SchemaMigration Destroy (18.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200413182540"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6964523578905205950)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6964523578905205950)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddSizeToPizza (20200413180905)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mALTER TABLE "pizzas" DROP COLUMN "size"[0m
+  [1m[36mprimary::SchemaMigration Destroy (1.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200413180905"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(6964523578905205950)[0m
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6964523578905205950)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePizzaGourmetToppings (20200413180437)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (24.7ms)[0m  [1m[35mDROP TABLE "pizza_gourmet_toppings"[0m
+  [1m[36mprimary::SchemaMigration Destroy (1.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200413180437"]]
+  [1m[35m (18.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6964523578905205950)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6964523578905205950)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePizzaToppings (20200413180421)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE "pizza_toppings"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200413180421"]]
+  [1m[35m (11.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6964523578905205950)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6964523578905205950)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCheeses (20200413180324)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE "cheeses"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200413180324"]]
+  [1m[35m (24.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6964523578905205950)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6964523578905205950)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSauces (20200413180317)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE "sauces"[0m
+  [1m[36mprimary::SchemaMigration Destroy (1.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200413180317"]]
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6964523578905205950)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6964523578905205950)[0m
+  [1m[35m (6.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGourmetToppings (20200413180307)
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.0ms)[0m  [1m[35mDROP TABLE "gourmet_toppings"[0m
+  [1m[36mprimary::SchemaMigration Destroy (1.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200413180307"]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(6964523578905205950)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6964523578905205950)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateToppings (20200413180254)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.4ms)[0m  [1m[35mDROP TABLE "toppings"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200413180254"]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6964523578905205950)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6964523578905205950)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePizzas (20200413180127)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.2ms)[0m  [1m[35mDROP TABLE "pizzas"[0m
+  [1m[36mprimary::SchemaMigration Destroy (4.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200413180127"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(6964523578905205950)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6964523578905205950)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateOrders (20200413175553)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.8ms)[0m  [1m[35mDROP TABLE "orders"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200413175553"]]
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(6964523578905205950)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6964523578905205950)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateOrders (20200413175553)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (51.6ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200413175553"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePizzas (20200413180127)
+  [1m[35m (8.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (29.8ms)[0m  [1m[35mCREATE TABLE "pizzas" ("id" bigserial primary key, "sauce_id" integer, "cheese_id" integer, "order_id" integer, "size" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (11.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200413180127"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateToppings (20200413180254)
+  [1m[35m (16.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE TABLE "toppings" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200413180254"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGourmetToppings (20200413180307)
+  [1m[35m (10.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (23.5ms)[0m  [1m[35mCREATE TABLE "gourmet_toppings" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200413180307"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSauces (20200413180317)
+  [1m[35m (14.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.8ms)[0m  [1m[35mCREATE TABLE "sauces" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200413180317"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCheeses (20200413180324)
+  [1m[35m (17.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.5ms)[0m  [1m[35mCREATE TABLE "cheeses" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200413180324"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePizzaToppings (20200413180421)
+  [1m[35m (11.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "pizza_toppings" ("id" bigserial primary key, "pizza_id" integer, "topping_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (3.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200413180421"]]
+  [1m[35m (14.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePizzaGourmetToppings (20200413180437)
+  [1m[35m (13.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.3ms)[0m  [1m[35mCREATE TABLE "pizza_gourmet_toppings" ("id" bigserial primary key, "pizza_id" integer, "gourmet_topping_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200413180437"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(6964523578905205950)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
