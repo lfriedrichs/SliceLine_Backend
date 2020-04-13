@@ -1,3 +1,3 @@
 class Cheese < ApplicationRecord
-    belongs_to :pizza
+    has_many :pizzas
 end
