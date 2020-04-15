@@ -22,10 +22,12 @@ cheeses.map {|cheese| Cheese.create(name: cheese)}
 
 veggies = ['kidney beans', 'asparagus', 'celery', 'garlic', 'red pepper', 'capers', 'cherkin', 'broccoli', 'lime', 'green peppers', 'mushrooms', 'onions', 'olives', 'spinach', 'pineapples']
 meats = ['bacon', 'ham', 'pepperoni', 'salami', 'sausage', 'lamb', 'chicken', 'beef', 'pork']
+
 toppings = veggies + meats
 toppings.map {|topping| Topping.create(name: topping)}
+
 spices = ['basil', 'jalapeno peppers', 'chives', 'sundried tomatoes', 'pepper', 'parsley']
 seafood = ['anchovies', 'shrimp', 'salmon']
+
 gourmetToppings = spices + seafood
 gourmetToppings.map {|gourmetTopping| GourmetTopping.create(name: gourmetTopping)}
-
