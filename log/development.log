@@ -9031,3 +9031,194 @@ Processing by Api::V1::UsersController#show as */*
 Completed 200 OK in 30ms (Views: 21.0ms | ActiveRecord: 2.1ms | Allocations: 3217)
 
 
+Started GET "/api/v1/users/Jack" for ::1 at 2020-04-16 09:25:57 -0700
+  [1m[35m (8.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"Jack"}
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Jack"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `show'
+  [1m[36mUser Exists? (3.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Jack"], ["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mOrder Load (3.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 40]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (74.73ms)
+Completed 200 OK in 195ms (Views: 102.1ms | ActiveRecord: 56.4ms | Allocations: 14183)
+
+
+Started GET "/api/v1/users/Test" for ::1 at 2020-04-16 09:26:47 -0700
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"Test"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Test"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `show'
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Test"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+  [1m[36mUser Create (12.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test"], ["created_at", "2020-04-16 16:26:47.481614"], ["updated_at", "2020-04-16 16:26:47.481614"]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Test"], ["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 41]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.78ms)
+Completed 200 OK in 84ms (Views: 6.6ms | ActiveRecord: 20.4ms | Allocations: 5595)
+
+
+Started GET "/api/v1/users/Jack" for ::1 at 2020-04-16 09:27:30 -0700
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"Jack"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Jack"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `show'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Jack"], ["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 40]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (10.97ms)
+Completed 200 OK in 18ms (Views: 11.0ms | ActiveRecord: 2.1ms | Allocations: 2527)
+
+
+Started GET "/api/v1/users/Jack" for ::1 at 2020-04-16 09:28:29 -0700
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"Jack"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Jack"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `show'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Jack"], ["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 40]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (9.88ms)
+Completed 200 OK in 26ms (Views: 10.3ms | ActiveRecord: 1.5ms | Allocations: 2527)
+
+
+Started GET "/api/v1/users/Jack" for ::1 at 2020-04-16 09:28:55 -0700
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"Jack"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Jack"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `show'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Jack"], ["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 40]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.44ms)
+Completed 200 OK in 10ms (Views: 3.5ms | ActiveRecord: 1.5ms | Allocations: 2511)
+
+
+Started GET "/api/v1/users/Jack" for ::1 at 2020-04-16 09:30:36 -0700
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"Jack"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Jack"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `show'
+  [1m[36mUser Exists? (5.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Jack"], ["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mOrder Load (6.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 40]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (11.9ms)
+Completed 200 OK in 23ms (Views: 6.1ms | ActiveRecord: 12.5ms | Allocations: 2508)
+
+
+Started GET "/api/v1/users/Jack" for ::1 at 2020-04-16 09:30:57 -0700
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"Jack"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Jack"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `show'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Jack"], ["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 40]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (2.88ms)
+Completed 200 OK in 10ms (Views: 3.7ms | ActiveRecord: 3.0ms | Allocations: 2527)
+
+
+Started GET "/api/v1/users/Jack" for ::1 at 2020-04-16 09:31:16 -0700
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"Jack"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Jack"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `show'
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Jack"], ["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mOrder Load (8.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 40]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (14.16ms)
+Completed 200 OK in 28ms (Views: 5.9ms | ActiveRecord: 11.4ms | Allocations: 2507)
+
+
+Started GET "/api/v1/users/Jack" for ::1 at 2020-04-16 09:31:46 -0700
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"Jack"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Jack"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `show'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Jack"], ["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 40]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.42ms)
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 1.2ms | Allocations: 2507)
+
+
+Started GET "/api/v1/users/Jack" for ::1 at 2020-04-16 09:32:14 -0700
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"Jack"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Jack"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `show'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Jack"], ["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mOrder Load (1.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 40]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (8.75ms)
+Completed 200 OK in 15ms (Views: 8.3ms | ActiveRecord: 2.4ms | Allocations: 2507)
+
+
+Started GET "/api/v1/users/Jack" for ::1 at 2020-04-16 09:32:30 -0700
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"Jack"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Jack"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `show'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Jack"], ["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 40]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.21ms)
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 1.7ms | Allocations: 2507)
+
+
+Started GET "/api/v1/users/Jack" for ::1 at 2020-04-16 09:33:08 -0700
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"Jack"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Jack"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `show'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Jack"], ["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mOrder Load (1.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 40]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.75ms)
+Completed 200 OK in 11ms (Views: 4.0ms | ActiveRecord: 2.9ms | Allocations: 2507)
+
+
+Started GET "/api/v1/users/Jack" for ::1 at 2020-04-16 09:34:03 -0700
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"Jack"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Jack"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `show'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Jack"], ["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mOrder Load (1.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 40]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (7.06ms)
+Completed 200 OK in 16ms (Views: 6.2ms | ActiveRecord: 3.4ms | Allocations: 2507)
+
+
+Started GET "/api/v1/users/Jack" for ::1 at 2020-04-16 09:50:12 -0700
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"Jack"}
+  [1m[36mUser Load (10.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Jack"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `show'
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Jack"], ["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mOrder Load (1.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 40]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (7.56ms)
+Completed 200 OK in 29ms (Views: 7.1ms | ActiveRecord: 13.6ms | Allocations: 2612)
+
+
