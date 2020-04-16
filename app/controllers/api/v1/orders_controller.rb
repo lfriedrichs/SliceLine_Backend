@@ -1,9 +1,14 @@
 class Api::V1::OrdersController < ApplicationController
 
     def index
-        orders = User.find_by_id(order_params[:user_id]).orders
+        orders = Order.all
         render json: orders
     end
+
+    # def index
+    #     orders = User.find_by_id(order_params[:user_id]).orders
+    #     render json: orders
+    # end
 
     def show
         order = Order.find(params[:id])
@@ -11,8 +16,8 @@ class Api::V1::OrdersController < ApplicationController
     end
 
     def create
-        order = Order.create(order_params[:user_id])
-        order.makePizza(order_params[:pizzas])
+        order = Order.create(user_params)
+        order.makePizza(params['order']['pizzas'])
         if order.valid?
             render json: order
         else 
@@ -37,8 +42,9 @@ class Api::V1::OrdersController < ApplicationController
     end
 
     private
-    def order_params
-        params.require(:order).permit(:user_id, pizzas:[])
+
+    def user_params
+        params.require(:order).permit(:user_id)
     end
 
 end

@@ -4,13 +4,24 @@ class Order < ApplicationRecord
 
     def makePizza(pizzas)
         pizzas.map do |pizza|
-            newPizza = Pizza.create(cheese: pizza[:cheese],
-            sauce: pizza[:sauce],
-            size: pizza[:size],
+            size = Size.find_by(name: pizza['size'])
+            sauce = Sauce.find_by(name: pizza['sauce'])
+            cheese = Cheese.find_by(name: pizza['cheese'])
+
+            toppings = pizza['toppings'].map{ |topping| Topping.find_by(name: topping) }
+            
+            gourmet_toppings = pizza['gourmet_toppings'].map{|gourmet_topping| GourmetTopping.find_by(name: gourmet_topping)}
+
+            newPizza = Pizza.create(
+            size: size,
+            sauce: sauce,
+            cheese: cheese,
             order_id: self.id)
-            newPizza.toppings << pizza[:toppings]
-            newPizza.gourmet_toppings << pizza[:gourmet_toppings]
+            toppings.map {|topping| newPizza.toppings << topping}
+            gourmet_toppings.map {|gourmet_topping| newPizza.gourmet_toppings << gourmet_topping}
             newPizza.save
+            self.pizzas << newPizza
         end
+        # return pizzasArray
     end
 end
