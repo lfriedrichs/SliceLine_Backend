@@ -1,6 +1,7 @@
 class Api::V1::OrdersController < ApplicationController
 
     def index
+        # orders = Order.where(:user => user_params)
         orders = Order.all
         render json: orders
     end
@@ -16,7 +17,7 @@ class Api::V1::OrdersController < ApplicationController
     end
 
     def create
-        order = Order.create(user_params)
+        order = Order.create(user_id: params['order']['user_id'])
         order.makePizza(params['order']['pizzas'])
         if order.valid?
             render json: order
@@ -39,12 +40,6 @@ class Api::V1::OrdersController < ApplicationController
         order = Order.find(params[:id])
         order.destroy
         render json: {message: "order successfully deleted"}
-    end
-
-    private
-
-    def user_params
-        params.require(:order).permit(:user_id)
     end
 
 end
