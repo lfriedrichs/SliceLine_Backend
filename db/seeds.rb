@@ -13,8 +13,9 @@ Sauce.destroy_all
 Topping.destroy_all
 GourmetTopping.destroy_all
 Pizza.destroy_all
+Size.destroy_all
 
-sauces = ['tomato', 'white', 'bbq', 'garlic olive oil', 'french white', 'lemon hill', 'satay',]
+sauces = ['tomato', 'white', 'bbq', 'garlic olive oil', 'french white', 'lemon hill', 'satay']
 sauces.map {|sauce| Sauce.create(name: sauce)}
 
 cheeses = ['feta', 'parmesan', 'mozzarella', 'ricota']
@@ -29,3 +30,5 @@ seafood = ['anchovies', 'shrimp', 'salmon']
 gourmetToppings = spices + seafood
 gourmetToppings.map {|gourmetTopping| GourmetTopping.create(name: gourmetTopping)}
 
+size = ['small', 'medium', 'large']
+size.map {|size| Size.create(name: size)}
