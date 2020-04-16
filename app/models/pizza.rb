@@ -6,4 +6,5 @@ class Pizza < ApplicationRecord
     has_many :toppings, through: :pizza_toppings
     belongs_to :cheese 
     belongs_to :sauce
+    belongs_to :size
 end

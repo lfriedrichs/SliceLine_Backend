@@ -4,7 +4,7 @@ class OrderSerializer < ActiveModel::Serializer
   def pizzas
     self.object.pizzas.map do |pizza|
       {pizza_id: pizza.id,
-      size: pizza.size,
+      size: pizza.size.name,
       sauce: pizza.sauce.name,
       cheese: pizza.cheese.name,
       toppings: pizza.toppings.map {|topping| topping.name},

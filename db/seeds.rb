@@ -8,11 +8,15 @@
 
 User.destroy_all
 Order.destroy_all
+Size.destroy_all
 Cheese.destroy_all
 Sauce.destroy_all
 Topping.destroy_all
 GourmetTopping.destroy_all
 Pizza.destroy_all
+
+sizes = ['small', 'medium', 'large']
+sizes.map {|size| Size.create(name: size)}
 
 sauces = ['tomato', 'white', 'bbq', 'garlic olive oil', 'french white', 'lemon hill', 'satay',]
 sauces.map {|sauce| Sauce.create(name: sauce)}
