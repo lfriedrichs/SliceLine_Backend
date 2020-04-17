@@ -5,15 +5,15 @@ class Order < ApplicationRecord
 
     def makePizza(pizzas)
         pizzas.map do |pizza|
-            size = Size.find_by(name: pizza['size'])
-            sauce = Sauce.find_by(name: pizza['sauce'])
-            cheese = Cheese.find_by(name: pizza['cheese'])
+            size = Size.find_by(name: pizza['sizes'])
+            sauce = Sauce.find_by(name: pizza['sauces'])
+            cheese = Cheese.find_by(name: pizza['cheeses'])
 
             toppings = pizza['toppings'].map{ |topping| Topping.find_by(name: topping) }
             
             gourmet_toppings = pizza['gourmet_toppings'].map{|gourmet_topping| GourmetTopping.find_by(name: gourmet_topping)}
 
-            newPizza = Pizza.create(
+            newPizza = Pizza.find_or_create_by( #Pizza.create(
             size: size,
             sauce: sauce,
             cheese: cheese,
@@ -23,6 +23,5 @@ class Order < ApplicationRecord
             newPizza.save
             self.pizzas << newPizza
         end
-        # return pizzasArray
     end
 end
