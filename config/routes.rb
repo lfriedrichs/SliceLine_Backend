@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   resources :sizes
   namespace :api do
     namespace :v1 do
-      resources :orders
-      resources :users, only: [:index, :show]
+      resources :orders#, only [:create, :update, :destroy]
+      resources :users, only: [:show]
     end
   end
 

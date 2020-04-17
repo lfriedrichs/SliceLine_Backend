@@ -1,19 +1,15 @@
 class Api::V1::OrdersController < ApplicationController
 
     def index
+        # orders = Order.where(:user => user_params)
         orders = Order.all
         render json: orders
     end
 
-    # def index
-    #     orders = User.find_by_id(order_params[:user_id]).orders
-    #     render json: orders
+    # def show
+    #     order = Order.find(params[:id])
+    #     render json: order
     # end
-
-    def show
-        order = Order.find(params[:id])
-        render json: order
-    end
 
     def create
         order = Order.create(user_id: params['order']['user_id'])
@@ -28,7 +24,7 @@ class Api::V1::OrdersController < ApplicationController
     def update
         order = Order.find(params[:id])
         if order.valid?
-            order.update(order_params)
+            order.makePizza(params[:pizzas])
             render json: order
         else
             render json: {message: order.errors.full_messages}
