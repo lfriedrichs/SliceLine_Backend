@@ -14,6 +14,7 @@ Sauce.destroy_all
 Topping.destroy_all
 GourmetTopping.destroy_all
 Pizza.destroy_all
+Size.destroy_all
 
 sizes = ['small', 'medium', 'large']
 sizes.map {|size| Size.create(name: size)}

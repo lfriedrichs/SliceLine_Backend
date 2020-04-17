@@ -22,9 +22,9 @@ class Api::V1::OrdersController < ApplicationController
     end
 
     def update
-        order = Order.find(params[:id])
+        order = Order.find(params['order']['id'])
         if order.valid?
-            order.makePizza(params[:pizzas])
+            order.makePizza(params['order']['pizzas'])
             render json: order
         else
             render json: {message: order.errors.full_messages}
