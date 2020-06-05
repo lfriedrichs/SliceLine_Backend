@@ -22912,3 +22912,42 @@ Processing by Api::V1::UsersController#show as */*
 Completed 200 OK in 420ms (Views: 198.2ms | ActiveRecord: 217.7ms | Allocations: 16166)
 
 
+Started GET "/api/v1/users/dan" for ::1 at 2020-04-17 09:50:27 -0700
+  [1m[35m (10.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"dan"}
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "dan"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `show'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "dan"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:14:in `show'
+[active_model_serializers]   [1m[36mPizza Load (0.5ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" WHERE "pizzas"."order_id" = $1[0m  [["order_id", 6]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mSize Load (0.4ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:7:in `block in pizzas'
+[active_model_serializers]   [1m[36mSauce Load (0.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:8:in `block in pizzas'
+[active_model_serializers]   [1m[36mCheese Load (0.9ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses" WHERE "cheeses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:9:in `block in pizzas'
+[active_model_serializers]   [1m[36mTopping Load (1.8ms)[0m  [1m[34mSELECT "toppings".* FROM "toppings" INNER JOIN "pizza_toppings" ON "toppings"."id" = "pizza_toppings"."topping_id" WHERE "pizza_toppings"."pizza_id" = $1[0m  [["pizza_id", 5]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mGourmetTopping Load (0.6ms)[0m  [1m[34mSELECT "gourmet_toppings".* FROM "gourmet_toppings" INNER JOIN "pizza_gourmet_toppings" ON "gourmet_toppings"."id" = "pizza_gourmet_toppings"."gourmet_topping_id" WHERE "pizza_gourmet_toppings"."pizza_id" = $1[0m  [["pizza_id", 5]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:11:in `map'
+[active_model_serializers]   [1m[36mPizza Load (0.3ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" WHERE "pizzas"."order_id" = $1[0m  [["order_id", 14]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mCACHE Size Load (0.0ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:7:in `block in pizzas'
+[active_model_serializers]   [1m[36mSauce Load (0.3ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:8:in `block in pizzas'
+[active_model_serializers]   [1m[36mCACHE Cheese Load (0.0ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses" WHERE "cheeses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:9:in `block in pizzas'
+[active_model_serializers]   [1m[36mTopping Load (7.3ms)[0m  [1m[34mSELECT "toppings".* FROM "toppings" INNER JOIN "pizza_toppings" ON "toppings"."id" = "pizza_toppings"."topping_id" WHERE "pizza_toppings"."pizza_id" = $1[0m  [["pizza_id", 13]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mGourmetTopping Load (3.8ms)[0m  [1m[34mSELECT "gourmet_toppings".* FROM "gourmet_toppings" INNER JOIN "pizza_gourmet_toppings" ON "gourmet_toppings"."id" = "pizza_gourmet_toppings"."gourmet_topping_id" WHERE "pizza_gourmet_toppings"."pizza_id" = $1[0m  [["pizza_id", 13]]
+[active_model_serializers]   ↳ app/serializers/order_serializer.rb:11:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (240.21ms)
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (319.04ms)
+Completed 200 OK in 413ms (Views: 312.8ms | ActiveRecord: 59.5ms | Allocations: 49184)
+
+
